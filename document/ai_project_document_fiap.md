@@ -1,92 +1,118 @@
+<img src="../assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width="30%" height="30%">
 
-<img src="../assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=30% height=30%>
+# AI Project Document — Sprint 1
 
-# AI Project Document - Módulo 1 - FIAP
+## FleetWise
 
-**_Os trechos em itálico servem apenas como guia para o preenchimento da seção. Por esse motivo, não devem fazer parte da documentação final_**
+Este documento complementa o [README principal](../README.md). O README concentra a visão geral do projeto; os documentos técnicos em document/ detalham cada área.
 
-## Nome do Grupo
+## 1. Introdução
 
-#### Nomes dos integrantes do grupo
+### 1.1 Escopo
 
+O FleetWise propõe uma plataforma para consolidação, diagnóstico e redução de custos de frota.
 
+O problema abordado é a fragmentação de dados de combustível, manutenção, pedágio, multas, impostos e fretes em diferentes fontes e formatos.
 
-## Sumário
+A Sprint 1 possui caráter de planejamento. Não existe requisito de modelo treinado ou aplicação funcional.
 
-[1. Introdução](#c1)
+### 1.2 Solução proposta
 
-[2. Visão Geral do Projeto](#c2)
+A solução deverá receber diferentes fontes de dados, normalizá-las, armazená-las em uma estrutura comum e utilizar regras de negócio, indicadores, benchmarks e modelos analíticos para produzir diagnósticos e recomendações.
 
-[3. Desenvolvimento do Projeto](#c3)
+Leia: [Problema, contexto e usuários](01-problema-e-usuarios.md)
 
-[4. Resultados e Avaliações](#c4)
+## 2. Visão geral
 
-[5. Conclusões e Trabalhos Futuros](#c5)
+### 2.1 Objetivos
 
-[6. Referências](#c6)
+- consolidar custos;
+- identificar possíveis ineficiências;
+- comparar indicadores;
+- estimar oportunidades de economia;
+- orientar o usuário sobre dados ausentes;
+- apresentar recomendações acionáveis.
 
-[Anexos](#c7)
+### 2.2 Público-alvo
 
-<br>
+- Gestor de Frota;
+- CFO / Liderança;
+- Sem Parar Empresas.
 
-# <a name="c1"></a>1. Introdução
+### 2.3 User Stories
 
-## 1.1. Escopo do Projeto
+As histórias escolhidas e suas respostas propostas estão documentadas em [User Stories](02-user-stories.md).
 
-### 1.1.1. Contexto da Inteligência Artificial
+## 3. Desenvolvimento proposto
 
-*Descreva aqui o contexto da indústria de Inteligência Artificial. Explique o segmento de atuação, as atividades executadas e a abrangência das suas aplicações (internacional, nacional ou regional).*
+### 3.1 Dados
 
-### 1.1.2. Descrição da Solução Desenvolvida
+A solução poderá receber CSV, XLSX, PDFs, imagens, textos, extratos e, futuramente, APIs.
 
-*Descreva brevemente a solução de IA desenvolvida. Inclua aspectos essenciais para a criação de valor do produto com o objetivo de entender melhor a realidade do cliente e entregar uma solução alinhada com suas expectativas.*
+Leia: [Dados, ingestão e normalização](03-dados-e-ingestao.md)
 
-# <a name="c2"></a>2. Visão Geral do Projeto
+### 3.2 Tecnologias
 
-## 2.1. Objetivos do Projeto
+Stack inicial sugerida:
 
-*Defina claramente os objetivos do projeto de IA. O que o projeto pretende alcançar?*
+- React + TypeScript;
+- Python + FastAPI;
+- PostgreSQL;
+- Pandas;
+- Scikit-learn;
+- Docker;
+- GitHub Actions.
 
-## 2.2. Público-Alvo
+### 3.3 Modelagem e IA
 
-*Identifique o público-alvo do projeto. Quem são os usuários finais da solução desenvolvida?*
+A estratégia proposta combina:
 
-## 2.3. Metodologia
+- regras determinísticas;
+- análise estatística;
+- modelos de ML quando justificados;
+- IA generativa para extração e explicação.
 
-*Descreva a metodologia utilizada para desenvolver o projeto. Quais foram as etapas e processos seguidos?*
+Cálculos financeiros não deverão depender diretamente de respostas generativas.
 
-# <a name="c3"></a>3. Desenvolvimento do Projeto
+Leia: [Diagnóstico, regras de negócio e IA](04-diagnostico-e-ia.md)
 
-## 3.1. Tecnologias Utilizadas
+### 3.4 Arquitetura
 
-*Liste as tecnologias, ferramentas e bibliotecas utilizadas no desenvolvimento do projeto de IA.*
+A aplicação será dividida em frontend, API, ingestão, analytics, recomendações e persistência.
 
-## 3.2. Modelagem e Algoritmos
+Leia: [Arquitetura da solução](05-arquitetura.md)
 
-*Descreva os modelos e algoritmos de IA utilizados no projeto. Explique por que esses modelos foram escolhidos e como foram implementados.*
+## 4. Segurança
 
-## 3.3. Treinamento e Teste
+O projeto prevê autenticação, autorização, isolamento de dados, rastreabilidade e princípios de LGPD.
 
-*Descreva o processo de treinamento e teste dos modelos de IA. Inclua informações sobre os conjuntos de dados utilizados, métricas de avaliação e resultados obtidos.*
+Leia: [Segurança, privacidade e LGPD](06-seguranca-e-lgpd.md)
 
-# <a name="c4"></a>4. Resultados e Avaliações
+## 5. Resultados esperados
 
-## 4.1. Análise dos Resultados
+Como esta é a Sprint 1, não existem resultados experimentais ou métricas de modelo.
 
-*Analise os resultados obtidos com os modelos de IA. Compare os resultados esperados com os resultados reais e discuta as possíveis razões para as diferenças.*
+Os resultados esperados para as próximas Sprints incluem:
 
-## 4.2. Feedback dos Usuários
+- ingestão de dados simulados;
+- cálculo de KPIs;
+- comparação de benchmarks;
+- identificação de sinais de ineficiência;
+- scoring de alternativas;
+- dashboard e relatório.
 
-*Inclua feedback recebido de usuários finais durante o processo de avaliação do projeto.*
+## 6. Trabalhos futuros
 
-# <a name="c5"></a>5. Conclusões e Trabalhos Futuros
+O desenvolvimento será realizado incrementalmente, começando pela fundação de dados e backend e avançando para analytics, IA e interface.
 
-*Descreva de que formas a solução desenvolvida atingiu os objetivos do projeto. Indique pontos fortes e pontos a melhorar. Relacione os pontos de melhorias evidenciados e elabore um plano de ações para serem implementadas no futuro.*
+Leia: [Roadmap e organização](07-roadmap.md)
 
-# <a name="c6"></a>6. Referências
+## 7. Índice técnico
 
-_Incluir as principais referências de seu projeto, para que outros possam consultar caso tenham interesse em aprofundar._
-
-# <a name="c7"></a>Anexos
-
-*Inclua aqui quaisquer complementos para seu projeto, como diagramas, imagens, tabelas etc. Organize em sub-tópicos utilizando headings menores (use ## ou ### para isso).*
+- [Problema, contexto e usuários](01-problema-e-usuarios.md)
+- [User Stories](02-user-stories.md)
+- [Dados, ingestão e normalização](03-dados-e-ingestao.md)
+- [Diagnóstico, regras de negócio e IA](04-diagnostico-e-ia.md)
+- [Arquitetura](05-arquitetura.md)
+- [Segurança e LGPD](06-seguranca-e-lgpd.md)
+- [Roadmap](07-roadmap.md)
